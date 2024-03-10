@@ -63,6 +63,11 @@ const MasterLayout: React.FC = () => {
               icon: <UploadOutlined />,
               label: <Link to="/login">Login Page</Link>,
             },
+            {
+              key: "4",
+              icon: <UploadOutlined />,
+              label: <Link to="/project-detail">ProjectDetail</Link>,
+            },
           ]}
         />
       </Sider>
@@ -82,7 +87,6 @@ const MasterLayout: React.FC = () => {
               />
             </Col>
             <Col span={12}>
-              {/* <Flex justify="end"> */}
               <Space
                 align="center"
                 split={<Divider type="vertical" />}
@@ -106,24 +110,8 @@ const MasterLayout: React.FC = () => {
                   </fetcher.Form>
                 ) : null}
               </Space>
-              {/* </Flex> */}
             </Col>
           </Row>
-
-          {/* <Flex style={boxStyle} justify="space-between">
-            <Button type="primary">Primary</Button>
-            <Button type="primary">Primary</Button>
-            <Button type="primary">Primary</Button>
-            <Button type="primary">Primary</Button>
-
-            <AuthStatus />
-
-            <fetcher.Form method="post" action="/logout">
-              <Button type="default" disabled={isLoggingOut}>
-                {isLoggingOut ? "Signing out..." : "Sign out"}
-              </Button>
-            </fetcher.Form>
-          </Flex> */}
         </Header>
         <Content
           style={{
@@ -134,7 +122,7 @@ const MasterLayout: React.FC = () => {
             borderRadius: borderRadiusLG,
           }}
         >
-          Content
+          {/* Content
           <AuthStatus />
           <ul>
             <li>
@@ -143,7 +131,7 @@ const MasterLayout: React.FC = () => {
             <li>
               <Link to="/protected">Protected Page</Link>
             </li>
-          </ul>
+          </ul> */}
           <Outlet />
         </Content>
       </Layout>

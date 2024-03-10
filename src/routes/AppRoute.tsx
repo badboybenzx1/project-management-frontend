@@ -9,6 +9,7 @@ import LoginPage from "../containers/LoginPage";
 import PublicPage from "../containers/Home/PublicPage";
 import ProtectedPage from "../containers/Home/ProtectedPage";
 import MasterLayout from "../containers/Layouts/MasterLayout";
+import ProjectDetail from "../pages/ProjectDetail";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path: "protected",
         loader: protectedLoader,
         Component: ProtectedPage,
+      },
+      {
+        path: "project-detail",
+        loader: protectedLoader,
+        Component: ProjectDetail,
       },
     ],
   },

@@ -44,14 +44,14 @@ const LoginPage = () => {
       };
     }
 
-    return navigate("/protected");
+    return navigate("/");
   };
 
   return (
     <div>
       <p>You must log in to view the page at {from}</p>
 
-      <RrdFrom method="post" replace>
+      {/* <RrdFrom method="post" replace>
         <input type="hidden" name="redirectTo" value={from} />
         <label>
           Username: <input name="username" />
@@ -62,7 +62,7 @@ const LoginPage = () => {
         {actionData && actionData.error ? (
           <p style={{ color: "red" }}>{actionData.error}</p>
         ) : null}
-      </RrdFrom>
+      </RrdFrom> */}
 
       <Form
         name="basic"
