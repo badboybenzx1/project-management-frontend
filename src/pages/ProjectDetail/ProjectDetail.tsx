@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import useData from "../hooks/useData";
+import useData from "../../hooks/useData";
 import { Space } from "antd";
-import { ColumnTypes } from "../constants/enums";
-import { IProduct } from "../constants/models";
-import WorkflowColumn from "./ProjectDetail/components/WorkflowColumn";
+import { ColumnTypes } from "../../constants/enums";
+import { IProduct } from "../../constants/models";
+import WorkflowColumn from "./components/WorkflowColumn";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import Cards from "./ProjectDetail/components/Cards";
+import Cards from "./components/Cards";
 import Title from "antd/es/typography/Title";
 
 const ProjectDetail = () => {

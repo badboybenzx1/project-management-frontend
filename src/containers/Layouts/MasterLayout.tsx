@@ -20,9 +20,11 @@ import React, { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
+  ProjectOutlined,
+  HomeOutlined,
   UserOutlined,
-  VideoCameraOutlined,
+  LoginOutlined,
+  CalendarOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Row, Col, Space, Divider } from "antd";
 import { Link, Outlet, useFetcher, useRouteLoaderData } from "react-router-dom";
@@ -42,7 +44,7 @@ const MasterLayout: React.FC = () => {
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
+        <div className="demo-logo-vertical" style={{ height: 85 }} />
         <Menu
           theme="dark"
           mode="inline"
@@ -50,23 +52,28 @@ const MasterLayout: React.FC = () => {
           items={[
             {
               key: "1",
-              icon: <UserOutlined />,
+              icon: <HomeOutlined />,
               label: <Link to="/">Public Page</Link>,
             },
             {
               key: "2",
-              icon: <VideoCameraOutlined />,
-              label: <Link to="/protected">Protected Page</Link>,
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
+              icon: <LoginOutlined />,
               label: <Link to="/login">Login Page</Link>,
             },
             {
+              key: "3",
+              icon: <UserOutlined />,
+              label: <Link to="/protected">Protected Page</Link>,
+            },
+            {
               key: "4",
-              icon: <UploadOutlined />,
-              label: <Link to="/project-detail">ProjectDetail</Link>,
+              icon: <ProjectOutlined />,
+              label: <Link to="/project-detail">Project Detail</Link>,
+            },
+            {
+              key: "5",
+              icon: <CalendarOutlined />,
+              label: <Link to="/project-timeline">Project Timeline</Link>,
             },
           ]}
         />
