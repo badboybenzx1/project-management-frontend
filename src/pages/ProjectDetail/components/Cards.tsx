@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useDrag } from "react-dnd";
-import { Card } from "antd";
+import { Avatar, Card, Space, Tooltip } from "antd";
 import { ColumnTypes, cardType } from "../../../constants/enums";
+import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
 
 type obj = {
   name: string;
@@ -74,6 +75,29 @@ const Cards = ({
       }}
     >
       {material}
+      <br />
+      <br />
+
+      <Space align="center">
+        <Avatar.Group
+          maxCount={2}
+          size={"small"}
+          maxStyle={{ color: "#f56a00", backgroundColor: "#fde3cf" }}
+        >
+          <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />
+          <Avatar style={{ backgroundColor: "#f56a00" }}>K</Avatar>
+          <Tooltip title="Ant User" placement="top">
+            <Avatar
+              style={{ backgroundColor: "#87d068" }}
+              icon={<UserOutlined />}
+            />
+          </Tooltip>
+          <Avatar
+            style={{ backgroundColor: "#1677ff" }}
+            icon={<AntDesignOutlined />}
+          />
+        </Avatar.Group>
+      </Space>
     </Card>
   );
 };

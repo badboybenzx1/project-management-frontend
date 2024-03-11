@@ -23,7 +23,7 @@ const WorkflowColumn = ({
 
   return (
     <>
-      <Title level={4}>h4. {name}</Title>
+      <Title level={4}>{name}</Title>
 
       <Row gutter={30} wrap={false} style={{ marginLeft: 0 }}>
         <Col
@@ -43,7 +43,7 @@ const WorkflowColumn = ({
               width: "100%",
               height: "100%",
               padding: "4px",
-              border: isOver ? "dashed 1px black" : "",
+              border: isOver ? "dashed 1px #1677ff" : "",
             }}
           >
             {children}
