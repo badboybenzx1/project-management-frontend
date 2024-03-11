@@ -1,75 +1,87 @@
-import React, { useEffect, useState } from "react";
-import useData from "../../hooks/useData";
-import { Space } from "antd";
-import { ColumnTypes } from "../../constants/enums";
-import { IProduct } from "../../constants/models";
-import WorkflowColumn from "./components/WorkflowColumn";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import Cards from "./components/Cards";
+import { Avatar, Button, Space, Tabs, TabsProps } from "antd";
+import React from "react";
+import {
+  ProfileOutlined,
+  ProjectOutlined,
+  CalendarOutlined,
+  UnorderedListOutlined,
+  LineChartOutlined,
+  UserOutlined,
+  AntDesignOutlined,
+  UserAddOutlined
+} from "@ant-design/icons";
 import Title from "antd/es/typography/Title";
+import ProjectTimeline from "./Tabs/ProjectTimeline/ProjectTimeline";
+import Dashboard from "./Tabs/Dashboard/Dashboard";
+import TaskList from "./Tabs/TaskList/TaskList";
+import ProjectBoard from "./Tabs/Board/ProjectBoard";
+import ProjectOverview from "./Tabs/ProjectOverview";
 
-const ProjectDetail = () => {
-  const [newArr, products] = useData();
-  const [orders, setOrders] = useState<IProduct[] | undefined>([]);
+const items: TabsProps["items"] = [
+  {
+    key: "1",
+    label: "Overview",
+    children: <ProjectOverview />,
+    icon: <ProfileOutlined />,
+  },
+  {
+    key: "2",
+    label: "List",
+    children: <TaskList />,
+    icon: <UnorderedListOutlined />,
+  },
+  {
+    key: "3",
+    label: "Board",
+    children: <ProjectBoard />, //"Content of Tab Pane 3",
+    icon: <ProjectOutlined />,
+  },
+  {
+    key: "4",
+    label: "Timeline",
+    children: <ProjectTimeline />,
+    icon: <CalendarOutlined />,
+  },
+  {
+    key: "5",
+    label: "Dashboard",
+    children: <Dashboard />,
+    icon: <LineChartOutlined />,
+  },
+];
 
-  //creating side effects based on the data's response.
-  useEffect(
-    () => {
-      setOrders(newArr);
-    },
-    [
-      // products
-    ]
-  );
-
-  const columnItem = (columnName: string) => {
-    return orders
-      ?.filter((order) => order.column === columnName)
-      .map((order, index) => (
-        <Cards
-          key={order.id}
-          name={order.name}
-          material={order.material}
-          setOrders={setOrders}
-          index={index}
+const operations = (
+  <>
+    <Space>
+      <Avatar.Group
+        maxCount={4}
+        maxStyle={{ color: "#f56a00", backgroundColor: "#fde3cf" }}
+      >
+        <Avatar style={{ backgroundColor: "#fde3cf" }}>A</Avatar>
+        <Avatar style={{ backgroundColor: "#f56a00" }}>K</Avatar>
+        <Avatar
+          style={{ backgroundColor: "#87d068" }}
+          icon={<UserOutlined />}
         />
-      ));
-  };
-
-  const { ORDERS, IN_PROGRESS, DELIVERED, RETURNED } = ColumnTypes;
-
+        <Avatar
+          style={{ backgroundColor: "#1677ff" }}
+          icon={<AntDesignOutlined />}
+        />
+        <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
+        <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />
+        <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />
+      </Avatar.Group>
+      <Button type="dashed" size="small"  icon={<UserAddOutlined />}>Add member</Button>
+    </Space>
+  </>
+);
+const ProjectDetail = () => {
   return (
     <>
-      <Title level={3}>Project Name: #Little Boy</Title>
+      {/* <div>ProjectDetail</div> */}
+      <Title level={4}>Project Name: #Little Boy</Title>
 
-      <div style={{ width: "100%", overflow: "auto", paddingBottom: 16 }}>
-        <DndProvider backend={HTML5Backend}>
-          <Space
-            direction="horizontal"
-            align="baseline"
-            //   size={[8, 16]}
-            size={109}
-            style={{
-              display: "flex",
-            //   marginLeft: "20px",
-              // marginTop: "20px",
-              gap: "2rem",
-            }}
-          >
-            <WorkflowColumn name={ORDERS}>{columnItem(ORDERS)}</WorkflowColumn>
-            <WorkflowColumn name={IN_PROGRESS}>
-              {columnItem(IN_PROGRESS)}
-            </WorkflowColumn>
-            <WorkflowColumn name={DELIVERED}>
-              {columnItem(DELIVERED)}
-            </WorkflowColumn>
-            <WorkflowColumn name={RETURNED}>
-              {columnItem(RETURNED)}
-            </WorkflowColumn>
-          </Space>
-        </DndProvider>
-      </div>
+      <Tabs tabBarExtraContent={operations} items={items} />
     </>
   );
 };

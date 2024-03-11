@@ -10,7 +10,6 @@ import PublicPage from "../containers/Home/PublicPage";
 import ProtectedPage from "../containers/Home/ProtectedPage";
 import MasterLayout from "../containers/Layouts/MasterLayout";
 import ProjectDetail from "../pages/ProjectDetail/ProjectDetail";
-import ProjectTimeline from "../pages/ProjectTimeline/ProjectTimeline";
 
 const router = createBrowserRouter([
   {
@@ -41,11 +40,6 @@ const router = createBrowserRouter([
         path: "project-detail",
         loader: protectedLoader,
         Component: ProjectDetail,
-      },
-      {
-        path: "project-timeline",
-        loader: protectedLoader,
-        Component: ProjectTimeline,
       },
     ],
   },

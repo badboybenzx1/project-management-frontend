@@ -24,7 +24,6 @@ import {
   HomeOutlined,
   UserOutlined,
   LoginOutlined,
-  CalendarOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme, Row, Col, Space, Divider } from "antd";
 import { Link, Outlet, useFetcher, useRouteLoaderData } from "react-router-dom";
@@ -69,11 +68,6 @@ const MasterLayout: React.FC = () => {
               key: "4",
               icon: <ProjectOutlined />,
               label: <Link to="/project-detail">Project Detail</Link>,
-            },
-            {
-              key: "5",
-              icon: <CalendarOutlined />,
-              label: <Link to="/project-timeline">Project Timeline</Link>,
             },
           ]}
         />

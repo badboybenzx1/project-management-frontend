@@ -1,8 +1,8 @@
 import React from "react";
 import { Row, Col, Space } from "antd";
 import { useDrop } from "react-dnd";
-import { cardType } from "../../../constants/enums";
 import Title from "antd/es/typography/Title";
+import { cardType } from "../../../../constants/enums";
 
 const WorkflowColumn = ({
   children,
@@ -31,7 +31,7 @@ const WorkflowColumn = ({
             backgroundColor: "rgba(0, 0, 0, 0.05)",
             width: 300,
             padding: "0.5rem",
-            minHeight: "70vh",
+            minHeight: "65vh",
             maxHeight: "690px",
             borderRadius: "5px",
             overflowY: "scroll",

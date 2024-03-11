@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useDrag } from "react-dnd";
-import { Avatar, Card, Space, Tooltip } from "antd";
-import { ColumnTypes, cardType } from "../../../constants/enums";
+import { Avatar, Card, Checkbox, Flex, Space, Tag, Tooltip } from "antd";
 import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
+import { ColumnTypes, cardType } from "../../../../constants/enums";
 
 type obj = {
   name: string;
@@ -12,10 +12,12 @@ type obj = {
 const Cards = ({
   name,
   material,
+  description,
   setOrders,
 }: {
   name: string;
   material: string;
+  description: string;
   setOrders: any;
   index: number;
 }) => {
@@ -74,17 +76,25 @@ const Cards = ({
         boxShadow: "1px 4px 11px -2px rgba(135,135,135,0.75)",
       }}
     >
-      {material}
-      <br />
-      <br />
+      <Space direction="vertical">
+        <span>{description}</span>
+        <Tag color="volcano">Hight</Tag>
 
-      <Space align="center">
+        <Space size="small" direction="vertical">
+          {/* <Checkbox>Apple</Checkbox>
+          <Checkbox>Pear</Checkbox>
+          <Checkbox>Orange</Checkbox> */}
+          {material.split(",").map((x: string) => {
+            return <Checkbox key={x}>{x}</Checkbox>;
+          })}
+        </Space>
+
         <Avatar.Group
           maxCount={2}
           size={"small"}
           maxStyle={{ color: "#f56a00", backgroundColor: "#fde3cf" }}
         >
-          <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />
+          <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
           <Avatar style={{ backgroundColor: "#f56a00" }}>K</Avatar>
           <Tooltip title="Ant User" placement="top">
             <Avatar
@@ -98,6 +108,10 @@ const Cards = ({
           />
         </Avatar.Group>
       </Space>
+      <br />
+      <br />
+
+      <Space align="center"></Space>
     </Card>
   );
 };
