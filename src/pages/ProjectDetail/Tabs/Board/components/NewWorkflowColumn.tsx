@@ -6,9 +6,9 @@ import { PlusOutlined } from "@ant-design/icons";
 const NewWorkflowColumn = () => {
   return (
     <>
-      <Row gutter={30} wrap={false} style={{ marginLeft: 0 }} align="middle" justify="center" >
+      <Row gutter={30} wrap={false} style={{ marginLeft: 0, marginBottom: 16 }} align="middle" justify="center" >
         <Col>
-          <Title level={4}>Add new</Title>
+          <Title level={4}></Title>
         </Col>
       </Row>
 

@@ -11,6 +11,7 @@ function useData() {
     {
       id: 1,
       name: "Market Analysis and Project Planning",
+      description:"Market Analysis and Project Planning ",
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
       end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 7),
       subtasks: [

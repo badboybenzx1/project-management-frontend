@@ -32,7 +32,7 @@ const WorkflowColumn = ({
             width: 300,
             padding: "0.5rem",
             minHeight: "65vh",
-            maxHeight: "690px",
+            maxHeight: "65vh",
             borderRadius: "5px",
             overflowY: "scroll",
           }}

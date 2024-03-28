@@ -85,12 +85,21 @@ const Cards = ({
       style={{
         opacity: isDragging ? "0.5" : "1",
         marginBottom: "15px",
-        boxShadow: "1px 4px 11px -2px rgba(135,135,135,0.75)",
       }}
     >
       <Space direction="vertical">
-        <span>{description}</span>
-        <Tag color="volcano">Hight</Tag>
+        {/* <span>{description}</span> */}
+
+        {description ? (
+          <>
+            <span>{description}</span>
+            <Tag color="volcano">Hight</Tag>
+          </>
+        ) : (
+          <Tag color="volcano">Hight</Tag>
+        )}
+
+        {/* <Tag color="volcano">Hight</Tag> */}
 
         <Space size="small" direction="vertical">
           {/* <Checkbox>Apple</Checkbox>
