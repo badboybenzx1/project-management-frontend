@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Space } from "antd";
+import { Row, Col } from "antd";
 import { useDrop } from "react-dnd";
 import Title from "antd/es/typography/Title";
 import { cardType } from "../../../../constants/enums";

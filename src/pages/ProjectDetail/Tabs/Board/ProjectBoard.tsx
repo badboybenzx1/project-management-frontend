@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Space } from "antd";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -10,7 +10,8 @@ import { ColumnTypes } from "../../../../constants/enums";
 import { IProduct } from "../../../../constants/models";
 
 const ProjectBoard = () => {
-  const [newArr, products] = useData();
+  // const [newArr, products] = useData();
+  const [newArr] = useData();
   const [orders, setOrders] = useState<IProduct[] | undefined>([]);
 
   //creating side effects based on the data's response.

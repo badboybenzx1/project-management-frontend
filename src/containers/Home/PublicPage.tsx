@@ -1,4 +1,3 @@
-import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "./../../assets/lotties/tasks-management--projects--workflow---supalai-.json";
 import { Col, Row, Typography } from "antd";

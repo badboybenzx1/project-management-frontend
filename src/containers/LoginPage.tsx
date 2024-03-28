@@ -1,10 +1,6 @@
-import React from "react";
 import {
-  Form as RrdFrom,
-  useActionData,
   useLocation,
   useNavigate,
-  useNavigation,
 } from "react-router-dom";
 import { Button, Checkbox, Form, type FormProps, Input } from "antd";
 import { fakeAuthProvider } from "../routes/auth";
@@ -24,10 +20,10 @@ const LoginPage = () => {
   const params = new URLSearchParams(location.search);
   const from = params.get("from") || "/";
 
-  const navigation = useNavigation();
-  const isLoggingIn = navigation.formData?.get("username") != null;
+  // const navigation = useNavigation();
+  // const isLoggingIn = navigation.formData?.get("username") != null;
 
-  const actionData = useActionData() as { error: string } | undefined;
+  // const actionData = useActionData() as { error: string } | undefined;
 
   const navigate = useNavigate();
 

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
 import { useDrag } from "react-dnd";
-import { Avatar, Card, Checkbox, Flex, Space, Tag, Tooltip } from "antd";
+import { Avatar, Card, Checkbox, Space, Tag, Tooltip } from "antd";
 import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
 import { ColumnTypes, cardType } from "../../../../constants/enums";
 

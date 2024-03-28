@@ -1,13 +1,6 @@
-import { Avatar, Card, Col, Row, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 import Paragraph from "antd/es/typography/Paragraph";
 import Title from "antd/es/typography/Title";
-import React from "react";
-import {
-  SettingOutlined,
-  EditOutlined,
-  EllipsisOutlined,
-} from "@ant-design/icons";
-import Meta from "antd/es/card/Meta";
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "./../../../assets/lotties/project-description.json";
 

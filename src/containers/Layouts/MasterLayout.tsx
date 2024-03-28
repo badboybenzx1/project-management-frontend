@@ -59,7 +59,7 @@ const MasterLayout: React.FC = () => {
   const { user } = useRouteLoaderData("root") as { user: string | null };
   const isLoggingOut = fetcher.formData != null;
 
-  const [items, setItems] = useState<MenuItem[]>([
+  const [items] = useState<MenuItem[]>([
     {
       key: "1",
       icon: <HomeOutlined />,

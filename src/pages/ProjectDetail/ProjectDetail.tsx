@@ -1,5 +1,4 @@
 import { Avatar, Button, Space, Tabs, TabsProps } from "antd";
-import React from "react";
 import {
   ProfileOutlined,
   ProjectOutlined,
