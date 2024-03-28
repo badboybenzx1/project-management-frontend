@@ -8,13 +8,26 @@ import {
   EllipsisOutlined,
 } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
+import { Player } from "@lottiefiles/react-lottie-player";
+import animationData from "./../../../assets/lotties/project-description.json";
 
 const ProjectOverview = () => {
   return (
     <>
       {/* <div>ProjectOverview</div> */}
 
-      <Row>
+      <Row align={"middle"}>
+        <Col span={6} offset={2}>
+          <Player
+            autoplay
+            // loop
+            keepLastFrame
+            speed={0.875}
+            src={animationData}
+            
+            // style={{ height: "300px", width: "300px" }}
+          />
+        </Col>
         <Col span={12} offset={1}>
           <Typography>
             <Title>Project description</Title>

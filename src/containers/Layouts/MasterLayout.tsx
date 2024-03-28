@@ -1,13 +1,13 @@
 function AuthStatus() {
   // Get our logged in user, if they exist, from the root route loader data
   const { user } = useRouteLoaderData("root") as { user: string | null };
-  const fetcher = useFetcher();
+  // const fetcher = useFetcher();
 
   if (!user) {
     return <span>You are not logged in.</span>;
   }
 
-  const isLoggingOut = fetcher.formData != null;
+  // const isLoggingOut = fetcher.formData != null;
 
   return (
     <div>
@@ -25,10 +25,29 @@ import {
   UserOutlined,
   LoginOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Button, theme, Row, Col, Space, Divider } from "antd";
-import { Link, Outlet, useFetcher, useRouteLoaderData } from "react-router-dom";
+import {
+  Layout,
+  Menu,
+  Button,
+  theme,
+  Row,
+  Col,
+  Space,
+  Divider,
+  MenuProps,
+} from "antd";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useFetcher,
+  useRouteLoaderData,
+  // withRouter,
+} from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
+
+type MenuItem = Required<MenuProps>["items"][number];
 
 const MasterLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -40,6 +59,47 @@ const MasterLayout: React.FC = () => {
   const { user } = useRouteLoaderData("root") as { user: string | null };
   const isLoggingOut = fetcher.formData != null;
 
+  const [items, setItems] = useState<MenuItem[]>([
+    {
+      key: "1",
+      icon: <HomeOutlined />,
+      label: (
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          Public Page
+        </NavLink>
+      ),
+    },
+    {
+      key: "2",
+      icon: <LoginOutlined />,
+      label: (
+        <NavLink
+          to="/login"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          Login Page
+        </NavLink>
+      ),
+    },
+    {
+      key: "3",
+      icon: <UserOutlined />,
+      label: <Link to="/protected">Protected Page</Link>,
+    },
+    {
+      key: "4",
+      icon: <ProjectOutlined />,
+      label: <Link to="/project-detail">Project Detail</Link>,
+    },
+  ]);
+
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -48,28 +108,7 @@ const MasterLayout: React.FC = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <HomeOutlined />,
-              label: <Link to="/">Public Page</Link>,
-            },
-            {
-              key: "2",
-              icon: <LoginOutlined />,
-              label: <Link to="/login">Login Page</Link>,
-            },
-            {
-              key: "3",
-              icon: <UserOutlined />,
-              label: <Link to="/protected">Protected Page</Link>,
-            },
-            {
-              key: "4",
-              icon: <ProjectOutlined />,
-              label: <Link to="/project-detail">Project Detail</Link>,
-            },
-          ]}
+          items={items}
         />
       </Sider>
       <Layout style={{ minHeight: "100vh" }}>
