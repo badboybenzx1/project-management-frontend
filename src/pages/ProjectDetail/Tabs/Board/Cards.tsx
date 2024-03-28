@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useDrag } from "react-dnd";
 import { Avatar, Card, Checkbox, Space, Tag, Tooltip } from "antd";
-import { AntDesignOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  AntDesignOutlined,
+  UserOutlined,
+  ClockCircleOutlined,
+} from "@ant-design/icons";
 import { ColumnTypes, cardType } from "../../../../constants/enums";
 
 type obj = {
@@ -9,14 +13,22 @@ type obj = {
 };
 
 const Cards = ({
+  // id,
   name,
-  material,
+  start,
+  end,
+  subtasks,
+  // material,
   description,
   setOrders,
 }: {
+  // id: number;
   name: string;
-  material: string;
-  description: string;
+  start?: Date;
+  end?: Date;
+  subtasks: string[];
+  // material: string;
+  description?: string;
   setOrders: any;
   index: number;
 }) => {
@@ -66,6 +78,7 @@ const Cards = ({
 
   return (
     <Card
+      hoverable={true}
       title={name}
       className="card"
       ref={drag}
@@ -83,10 +96,16 @@ const Cards = ({
           {/* <Checkbox>Apple</Checkbox>
           <Checkbox>Pear</Checkbox>
           <Checkbox>Orange</Checkbox> */}
-          {material.split(",").map((x: string) => {
+          {subtasks.map((x: string) => {
             return <Checkbox key={x}>{x}</Checkbox>;
           })}
         </Space>
+
+        <p>
+          <Tag icon={<ClockCircleOutlined />} color="default">
+            {start?.toDateString()} - {end?.toDateString()}
+          </Tag>
+        </p>
 
         <Avatar.Group
           maxCount={2}

@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Space } from "antd";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -8,6 +8,7 @@ import WorkflowColumn from "./WorkflowColumn";
 import useData from "../../../../hooks/useData";
 import { ColumnTypes } from "../../../../constants/enums";
 import { IProduct } from "../../../../constants/models";
+import NewWorkflowColumn from "./components/NewWorkflowColumn";
 
 const ProjectBoard = () => {
   // const [newArr, products] = useData();
@@ -31,7 +32,9 @@ const ProjectBoard = () => {
         <Cards
           key={order.id}
           name={order.name}
-          material={order.material}
+          start={order.start}
+          end={order.start}
+          subtasks={order.subtasks}
           description={order.description}
           setOrders={setOrders}
           index={index}
@@ -43,7 +46,7 @@ const ProjectBoard = () => {
 
   return (
     <>
-      <Title level={3}>Project Name: #Little Boy</Title>
+      <Title level={3}>Project Name: #Residential complex</Title>
 
       <div style={{ width: "100%", overflow: "auto", paddingBottom: 16 }}>
         <DndProvider backend={HTML5Backend}>
@@ -54,7 +57,7 @@ const ProjectBoard = () => {
             size={109}
             style={{
               display: "flex",
-            //   marginLeft: "20px",
+              //   marginLeft: "20px",
               // marginTop: "20px",
               gap: "2rem",
             }}
@@ -63,12 +66,13 @@ const ProjectBoard = () => {
             <WorkflowColumn name={IN_PROGRESS}>
               {columnItem(IN_PROGRESS)}
             </WorkflowColumn>
-            <WorkflowColumn name={DELIVERED}>
-              {columnItem(DELIVERED)}
-            </WorkflowColumn>
             <WorkflowColumn name={RETURNED}>
               {columnItem(RETURNED)}
             </WorkflowColumn>
+            <WorkflowColumn name={DELIVERED}>
+              {columnItem(DELIVERED)}
+            </WorkflowColumn>
+            <NewWorkflowColumn />
           </Space>
         </DndProvider>
       </div>

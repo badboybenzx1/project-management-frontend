@@ -4,62 +4,86 @@ import { ColumnTypes } from "../constants/enums";
 // import { IProduct } from "components/constants/models";
 // import { useList } from "@refinedev/core";
 
+const currentDate = new Date();
+
 function useData() {
   const data = [
     {
       id: 1,
-      name: "Cotopaxi Allpa 35L Travel Pack",
-      description:
-        "Durable and stylish backpack made from recycled materials. Versatile design, organization compartments.",
-      price: 179,
-      material: "Recycled nylon, polyester",
-      category: {
-        id: "12",
-      },
+      name: "Market Analysis and Project Planning",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 7),
+      subtasks: [
+        "Analyze market demand and consumer needs",
+        "Plan layout and infrastructure development",
+        "Set project budget and timeline",
+      ],
     },
     {
       id: 2,
-      name: "Hydro Flask Wide Mouth Water Bottle",
-      description:
-        "Stay hydrated throughout your day with this durable and stylish water bottle. Keeps drinks cold for hours and hot for even longer, perfect for workouts, hikes, or everyday use.",
-      price: 34.99,
-      material: "Stainless steel",
-      category: {
-        id: 9,
-      },
+      name: "Land Acquisition",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 14),
+      subtasks: [
+        "Search and select suitable land",
+        "Survey and assess land quality",
+      ],
     },
     {
       id: 3,
-      name: "Kärcher K5 Premium Pressure Washer",
-      description:
-        "Blast away dirt, grime, and mildew with this powerful pressure washer. Featuring a 1,800 PSI motor, multiple spray nozzles, and a detergent injector, it's perfect for cleaning cars, decks, patios, and more.",
-      price: 299.99,
-      material: "Plastic, metal",
-      category: {
-        id: 15,
-      },
+      name: "Project Design and Development",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 28),
+      subtasks: [
+        "Design house plans and infrastructure",
+        "Develop construction plans",
+      ],
     },
     {
       id: 4,
-      name: "Rode NT-USB Mini Condenser Microphone",
-      description:
-        "Capture studio-quality audio for podcasts, streaming, and music creation. Sleek and compact design with easy USB connectivity makes it perfect for any setup.",
-      price: 99.99,
-      material: "Metal, plastic",
-      category: {
-        id: 3,
-      },
+      name: "Permitting and Approval",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 29),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 4),
+      subtasks: ["Apply for permits and approvals", "Wait for approvals"],
     },
     {
       id: 5,
-      name: "Monocle magazine",
-      description:
-        "Explore global cities, discover emerging trends, and embrace a refined lifestyle with Monocle. This beautifully designed magazine delves into design, architecture, travel, and business, offering a curated perspective on the world's most innovative places and ideas.",
-      price: 18,
-      material: "Magazine",
-      category: {
-        id: 7,
-      },
+      name: "Construction",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 5),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth() + 2, 20),
+      subtasks: ["Construct infrastructure", "Build houses and structures"],
+    },
+    {
+      id: 6,
+      name: "Sales or Leasing",
+      
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth()+ 2, 21),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth() + 3, 4),
+      subtasks: ["Conduct market research", "Develop sales or leasing plans"],
+    },
+    {
+      id: 7,
+      name: "Post-Construction Management",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth()+ 3, 5),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth() + 3, 15),
+      subtasks: ["Manage project completion", "Build community within complex"],
+    },
+    {
+      id: 8,
+      name: "Legal Compliance and Protection",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth()+ 3, 16),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth() + 3, 25),
+      subtasks: [
+        "Coordinate with senior management and legal authorities",
+        "Protect property and residents",
+      ],
+    },
+    {
+      id: 9,
+      name: "Review and Evaluation",
+      start: new Date(currentDate.getFullYear(), currentDate.getMonth()+ 3, 26),
+      end: new Date(currentDate.getFullYear(), currentDate.getMonth() + 4, 2),
+      subtasks: ["Review project completeness", "Evaluate outcomes and report"],
     },
   ];
 

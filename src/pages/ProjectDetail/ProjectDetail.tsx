@@ -78,7 +78,7 @@ const ProjectDetail = () => {
   return (
     <>
       {/* <div>ProjectDetail</div> */}
-      <Title level={4}>Project Name: #Little Boy</Title>
+      <Title level={4}>Project Name: #Residential complex</Title>
 
       <Tabs tabBarExtraContent={operations} items={items} />
     </>

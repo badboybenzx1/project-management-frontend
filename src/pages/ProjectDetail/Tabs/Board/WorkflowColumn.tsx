@@ -28,7 +28,7 @@ const WorkflowColumn = ({
       <Row gutter={30} wrap={false} style={{ marginLeft: 0 }}>
         <Col
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.05)",
+            backgroundColor: "rgba(0, 0, 0, 0.01)",
             width: 300,
             padding: "0.5rem",
             minHeight: "65vh",

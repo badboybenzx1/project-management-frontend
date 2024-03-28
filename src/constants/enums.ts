@@ -1,8 +1,8 @@
 export enum ColumnTypes {
-  ORDERS = "Orders",
+  ORDERS = "Todo",
   IN_PROGRESS = "In Progress",
   DELIVERED = "Delivered",
-  RETURNED = "Returned",
+  RETURNED = "SignOff",
 }
 
 export enum cardType {

@@ -15,7 +15,11 @@ export interface dragItem {
 export interface IProduct {
   id: number;
   name: string;
-  material: string;
-  description:string;
+  start?: Date;
+  end?: Date;
+  subtasks: string[];
+
+  // material?: string;
+  description?: string;
   column?: ColumnTypes.ORDERS;
 }
