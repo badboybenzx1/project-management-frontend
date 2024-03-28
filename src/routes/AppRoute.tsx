@@ -1,7 +1,8 @@
 import type { LoaderFunctionArgs } from "react-router-dom";
 import {
   RouterProvider,
-  createBrowserRouter,
+  // createBrowserRouter,
+  createHashRouter,
   redirect,
 } from "react-router-dom";
 import { fakeAuthProvider } from "./auth";
@@ -11,7 +12,7 @@ import ProtectedPage from "../containers/Home/ProtectedPage";
 import MasterLayout from "../containers/Layouts/MasterLayout";
 import ProjectDetail from "../pages/ProjectDetail/ProjectDetail";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     id: "root",
     path: "/",
